@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-1b01  svn-revision#13094. --><xs:schema xmlns:tns="http://app.mig.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://app.mig.com/">
+
+<xs:element name="apartar" type="tns:apartar"/>
+
+<xs:element name="apartarResponse" type="tns:apartarResponse"/>
+
+<xs:element name="autenticar" type="tns:autenticar"/>
+
+<xs:element name="autenticarResponse" type="tns:autenticarResponse"/>
+
+<xs:element name="buscarAutor" type="tns:buscarAutor"/>
+
+<xs:element name="buscarAutorResponse" type="tns:buscarAutorResponse"/>
+
+<xs:element name="buscarTitulo" type="tns:buscarTitulo"/>
+
+<xs:element name="buscarTituloResponse" type="tns:buscarTituloResponse"/>
+
+<xs:element name="cancelarApartado" type="tns:cancelarApartado"/>
+
+<xs:element name="cancelarApartadoResponse" type="tns:cancelarApartadoResponse"/>
+
+<xs:element name="consultarLibros" type="tns:consultarLibros"/>
+
+<xs:element name="consultarLibrosResponse" type="tns:consultarLibrosResponse"/>
+
+<xs:element name="misLibrosApartados" type="tns:misLibrosApartados"/>
+
+<xs:element name="misLibrosApartadosResponse" type="tns:misLibrosApartadosResponse"/>
+
+<xs:complexType name="consultarLibros">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarLibrosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bibliotecaRespuesta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bibliotecaRespuesta">
+<xs:sequence>
+<xs:element name="libroDescrip" type="tns:libroDescripcion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="mensaje" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="libroDescripcion">
+<xs:sequence>
+<xs:element name="autores" type="xs:string" minOccurs="0"/>
+<xs:element name="categoria" type="xs:string" minOccurs="0"/>
+<xs:element name="edicion" type="xs:string" minOccurs="0"/>
+<xs:element name="editorial" type="xs:string" minOccurs="0"/>
+<xs:element name="estatus" type="xs:string" minOccurs="0"/>
+<xs:element name="isbn" type="xs:string" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="misLibrosApartados">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="misLibrosApartadosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bibliotecaRespuesta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarTitulo">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="consulta" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarTituloResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bibliotecaRespuesta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="apartar">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="isbn" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="apartarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:apartadoRespuesta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="apartadoRespuesta">
+<xs:sequence>
+<xs:element name="apartadoId" type="xs:long" minOccurs="0"/>
+<xs:element name="libroApartado" type="tns:libroDescripcion" minOccurs="0"/>
+<xs:element name="mensaje" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="autenticar">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="autenticarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:autenticadoRespuesta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="autenticadoRespuesta">
+<xs:sequence>
+<xs:element name="mensaje" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAutor">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+<xs:element name="consulta" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAutorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bibliotecaRespuesta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cancelarApartado">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="apartado" type="xs:long" minOccurs="0"/>
+<xs:element name="token" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cancelarApartadoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bibliotecaRespuesta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
