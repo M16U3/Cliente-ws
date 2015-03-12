@@ -20,9 +20,9 @@ public class Pract02 {
         // TODO code application logic here
       try {  
           
-       String token = Servicio.autenticado("9200731F", "secreto");   
+       String token = Servicio.autenticado("*****", "****");   
        
-       List<LibroDescripcion> lista = Servicio.getLibros("9200731F", token);
+       List<LibroDescripcion> lista = Servicio.getLibros("*****", token);
        
        for (LibroDescripcion l : lista) {
            System.out.println("ISBN: "+l.getIsbn()+" Titulo: "+l.getTitulo()+" Editorial: "+l.getEditorial()+" Autores: "+l.getAutores()+" Categoria: "+l.getCategoria()+" Edicion: "+l.getEdicion());
